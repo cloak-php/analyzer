@@ -12,10 +12,10 @@
 namespace cloak\analyzer;
 
 /**
- * Interface Driver
- * @package cloak\driver
+ * Interface AnalyzeDriver
+ * @package cloak\analyzer
  */
-interface Driver
+interface AnalyzeDriver
 {
 
     /**

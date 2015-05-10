@@ -16,7 +16,7 @@ namespace cloak\analyzer;
  * Class Analyzer
  * @package cloak\analyzer
  */
-final class Analyzer implements Driver
+final class Analyzer implements AnalyzeDriver
 {
 
     /**

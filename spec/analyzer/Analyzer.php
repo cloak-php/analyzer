@@ -27,7 +27,7 @@ describe(Analyzer::class, function() {
                 $adaptor->start()->shouldNotBeCalled();
                 $adaptor->stop()->shouldNotBeCalled();
 
-                $this->dirver = new AnalyzerDriver($adaptor->reveal());
+                $this->dirver = new Analyzer($adaptor->reveal());
             });
             it('return false', function() {
                 expect($this->dirver->isStarted())->toBeFalse();
@@ -41,7 +41,7 @@ describe(Analyzer::class, function() {
                 $adaptor->start()->shouldBeCalled();
                 $adaptor->stop()->shouldNotBeCalled();
 
-                $this->dirver = new AnalyzerDriver($adaptor->reveal());
+                $this->dirver = new Analyzer($adaptor->reveal());
             });
             it('return true', function() {
                 $this->dirver->start();
@@ -56,7 +56,7 @@ describe(Analyzer::class, function() {
                 $adaptor->start()->shouldBeCalled();
                 $adaptor->stop()->shouldBeCalled();
 
-                $this->dirver = new AnalyzerDriver($adaptor->reveal());
+                $this->dirver = new Analyzer($adaptor->reveal());
             });
             it('return true', function() {
                 $this->dirver->start();
@@ -75,7 +75,7 @@ describe(Analyzer::class, function() {
                 $adaptor->start()->shouldNotBeCalled();
                 $adaptor->stop()->shouldNotBeCalled();
 
-                $this->driver = new AnalyzerDriver($adaptor->reveal());
+                $this->driver = new Analyzer($adaptor->reveal());
             });
             it('return cloak\driver\Result', function() {
                 $result = $this->driver->getAnalyzeResult();
