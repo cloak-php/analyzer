@@ -11,8 +11,8 @@
 
 namespace cloak\driver\result;
 
-//use cloak\value\Path;
 
+use Eloquent\Pathogen\Factory\PathFactory;
 
 /**
  * Class FileResult
@@ -39,13 +39,13 @@ class FileResult
      */
     public function __construct($path, $resultLines = [])
     {
-//        $absolutePath = Path::fromString($path);
-        $absolutePath = $path;
+        $absolutePath = PathFactory::instance()->create($path);
+        $filePath = $absolutePath->normalize()->string();
 
-        if (file_exists($absolutePath) === false) {
+        if (file_exists($filePath) === false) {
             throw new FileNotFoundException("'$path' file does not exist");
         }
-        $this->path = $absolutePath;
+        $this->path = $filePath;
         $this->resultLines = $resultLines;
     }
 
