@@ -11,7 +11,7 @@
 
 use cloak\driver\Result;
 use cloak\driver\result\FileResult;
-use cloak\result\LineResult;
+use cloak\driver\result\LineResult;
 
 
 describe(Result::class, function() {

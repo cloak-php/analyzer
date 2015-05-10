@@ -9,11 +9,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\result;
+namespace cloak\driver\result;
 
 /**
  * Class LineResult
- * @package cloak\result
+ * @package cloak\driver\result
  */
 class LineResult
 {
