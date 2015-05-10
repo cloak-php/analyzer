@@ -12,10 +12,10 @@
 namespace cloak\spec\analyzer\adaptor;
 
 
-use cloak\analyzer\AnalyzeAdaptor;
+use cloak\analyzer\AnalyzeAdapter;
 
 
-class EnableFixtureAdaptor implements AnalyzeAdaptor
+class EnableFixtureAdapter implements AnalyzeAdapter
 {
 
     public function __construct()

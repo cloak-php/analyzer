@@ -11,8 +11,8 @@
 
 namespace cloak\analyzer;
 
-use cloak\analyzer\adaptor\AdaptorNotFoundException;
-use cloak\analyzer\adaptor\AdaptorNotAvailableException;
+use cloak\analyzer\adaptor\AdapterNotFoundException;
+use cloak\analyzer\adaptor\AdapterNotAvailableException;
 
 
 /**
@@ -37,8 +37,8 @@ class AdapterResolver implements AdapterResolvable
     }
 
     /**
-     * @return \cloak\analyzer\AnalyzeAdaptor
-     * @throws AdaptorNotFoundException
+     * @return \cloak\analyzer\AnalyzeAdapter
+     * @throws AdapterNotFoundException
      */
     public function detect()
     {
@@ -49,13 +49,13 @@ class AdapterResolver implements AdapterResolvable
             try {
                 $result = new $adaptor();
                 break;
-            } catch (AdaptorNotAvailableException $exception) {
+            } catch (AdapterNotAvailableException $exception) {
                 $exceptions[] = $exception->getMessage();
             }
         }
 
         if (count($exceptions) === count($this->adaptors)) {
-            throw new AdaptorNotFoundException($exceptions);
+            throw new AdapterNotFoundException($exceptions);
         }
 
         return $result;

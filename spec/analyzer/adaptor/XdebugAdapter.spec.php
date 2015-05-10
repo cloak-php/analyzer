@@ -9,13 +9,13 @@
  * with this source code in the file LICENSE.
  */
 
-use cloak\analyzer\adaptor\XdebugAdaptor;
+use cloak\analyzer\adaptor\XdebugAdapter;
 
 
-describe(XdebugAdaptor::class, function() {
+describe(XdebugAdapter::class, function() {
     describe('#stop', function() {
         beforeEach(function() {
-            $this->adaptor = new XdebugAdaptor();
+            $this->adaptor = new XdebugAdapter();
             $this->adaptor->start();
             $this->results = $this->adaptor->stop();
         });

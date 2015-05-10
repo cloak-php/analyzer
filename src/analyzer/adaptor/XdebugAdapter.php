@@ -11,24 +11,24 @@
 
 namespace cloak\analyzer\adaptor;
 
-use cloak\analyzer\AnalyzeAdaptor;
+use cloak\analyzer\AnalyzeAdapter;
 
 
 /**
- * Class XdebugAdaptor
+ * Class XdebugAdapter
  * @package cloak\analyzer
  */
-class XdebugAdaptor implements AnalyzeAdaptor
+class XdebugAdapter implements AnalyzeAdapter
 {
 
     public function __construct()
     {
         if (!extension_loaded('xdebug')) {
-            throw new AdaptorNotAvailableException('This adaptor requires Xdebug');
+            throw new AdapterNotAvailableException('This adapter requires Xdebug');
         }
 
         if ($this->isSupportXdebugVersion() && $this->isXdebugCoverageEnabled()) {
-            throw new AdaptorNotAvailableException('xdebug.coverage_enable=On has to be set in php.ini');
+            throw new AdapterNotAvailableException('xdebug.coverage_enable=On has to be set in php.ini');
         }
     }
 

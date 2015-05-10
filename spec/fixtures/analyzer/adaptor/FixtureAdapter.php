@@ -12,16 +12,16 @@
 namespace cloak\spec\analyzer\adaptor;
 
 
-use cloak\analyzer\AnalyzeAdaptor;
-use cloak\analyzer\adaptor\AdaptorNotAvailableException;
+use cloak\analyzer\AnalyzeAdapter;
+use cloak\analyzer\adaptor\AdapterNotAvailableException;
 
 
-class FixtureAdaptor implements AnalyzeAdaptor
+class FixtureAdapter implements AnalyzeAdapter
 {
 
     public function __construct()
     {
-        throw new AdaptorNotAvailableException();
+        throw new AdapterNotAvailableException();
     }
 
     public function start()

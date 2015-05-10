@@ -11,20 +11,20 @@
 
 namespace cloak\analyzer\adaptor;
 
-use cloak\analyzer\AnalyzeAdaptor;
+use cloak\analyzer\AnalyzeAdapter;
 
 
 /**
- * Class HHVMAdaptor
+ * Class HHVMAdapter
  * @package cloak\analyzer\adaptor
  */
-class HHVMAdaptor implements AnalyzeAdaptor
+class HHVMAdapter implements AnalyzeAdapter
 {
 
     public function __construct()
     {
         if (defined('HHVM_VERSION') === false) {
-            throw new AdaptorNotAvailableException('This adaptor requires hhvm');
+            throw new AdapterNotAvailableException('This adapter requires hhvm');
         }
     }
 

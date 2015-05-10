@@ -13,20 +13,10 @@ namespace cloak\analyzer\adaptor;
 
 use Exception;
 
-
 /**
- * Class AdaptorNotFoundException
+ * Class AdapterNotAvailableException
  * @package cloak\analyzer\adaptor
  */
-class AdaptorNotFoundException extends Exception
+class AdapterNotAvailableException extends Exception
 {
-
-    /**
-     * @param array $messages
-     */
-    public function __construct(array $messages)
-    {
-        parent::__construct(implode("\n", $messages));
-    }
-
 }

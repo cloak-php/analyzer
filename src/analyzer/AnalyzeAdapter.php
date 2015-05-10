@@ -13,10 +13,10 @@ namespace cloak\analyzer;
 
 
 /**
- * Interface Adaptor
+ * Interface Adapter
  * @package cloak\analyzer
  */
-interface AnalyzeAdaptor
+interface AnalyzeAdapter
 {
 
     public function start();
