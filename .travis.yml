@@ -9,4 +9,3 @@ script:
   - composer coverage
 after_script:
   - composer coveralls
-  - composer metrics
