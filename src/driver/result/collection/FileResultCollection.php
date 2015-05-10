@@ -11,19 +11,20 @@
 
 namespace cloak\driver\result\collection;
 
-use cloak\Collection;
 use cloak\collection\PairStackable;
 use cloak\driver\result\FileResult;
 use PhpCollection\Map;
 use PhpCollection\AbstractMap;
 use \Closure;
+use \IteratorAggregate;
+use \Countable;
 
 
 /**
  * Class FileResultCollection
  * @package cloak\driver\result\collection
  */
-class FileResultCollection implements Collection
+class FileResultCollection implements Countable, IteratorAggregate
 {
 
     use PairStackable;
