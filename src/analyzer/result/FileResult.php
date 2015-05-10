@@ -27,7 +27,7 @@ class FileResult
     private $path;
 
     /**
-     * @var array
+     * @var \cloak\analyzer\result\LineResult[]
      */
     private $resultLines;
 
@@ -37,7 +37,7 @@ class FileResult
      * @param array $resultLines
      * @throws \cloak\analyzer\result\FileNotFoundException
      */
-    public function __construct($path, $resultLines = [])
+    public function __construct($path, array $resultLines = [])
     {
         $absolutePath = PathFactory::instance()->create($path);
         $filePath = $absolutePath->normalize()->string();
@@ -45,8 +45,9 @@ class FileResult
         if (file_exists($filePath) === false) {
             throw new FileNotFoundException("'$path' file does not exist");
         }
+
         $this->path = $filePath;
-        $this->resultLines = $resultLines;
+        $this->resultLines = $this->createLineResults($resultLines);
     }
 
     /**
@@ -58,7 +59,7 @@ class FileResult
     }
 
     /**
-     * @return array
+     * @return \cloak\analyzer\result\LineResult[]
      */
     public function getLineResults()
     {
@@ -91,6 +92,21 @@ class FileResult
         }
 
         return false;
+    }
+
+    /**
+     * @param array<integer, integer> $resultLines
+     * @return \cloak\analyzer\result\LineResult[]
+     */
+    private function createLineResults(array $resultLines)
+    {
+        $result = [];
+
+        foreach ($resultLines as $lineNumber => $analyzedResult) {
+            $result[] = new LineResult($lineNumber, $analyzedResult);
+        }
+
+        return $result;
     }
 
 }
