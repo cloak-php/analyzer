@@ -1,0 +1,2 @@
+targets:
+  - spec/driver/adaptor/XdebugAdaptor.spec.php

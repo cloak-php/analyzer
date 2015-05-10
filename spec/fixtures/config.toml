@@ -1,0 +1,39 @@
+[target]
+
+# Include source files.
+includes = ["src"]
+
+# Exclude source files.
+excludes = ["vendor", "spec"]
+
+[report]
+reportDirectory = "/tmp"
+
+[report.coverageBounds]
+satisfactory = 70.0
+critical = 35.0
+
+[reporter]
+
+# TextReporter
+[reporter.text]
+satisfactory = 70.0
+critical = 35.0
+
+# TreeReporter
+[reporter.tree]
+satisfactory = 70.0
+critical = 35.0
+
+# MarkdownReporter
+[reporter.markdown]
+satisfactory = 70.0
+critical = 35.0
+outputFilePath = "/../tmp/report.md"
+
+# LcovReporter
+[reporter.lcov]
+outputFilePath = "/../tmp/report.lcov"
+
+# ProcessingTimeReporter
+[reporter.processingTime]
