@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\driver\result\collection;
+namespace cloak\analyzer\result\collection;
 
-use cloak\driver\result\FileResult;
+use cloak\analyzer\result\FileResult;
 use PhpCollection\Map;
 use PhpCollection\AbstractMap;
 use PhpOption\Option;
@@ -22,7 +22,7 @@ use \Countable;
 
 /**
  * Class FileResultCollection
- * @package cloak\driver\result\collection
+ * @package cloak\analyzer\result\collection
  */
 class FileResultCollection implements Countable, IteratorAggregate
 {

@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-use cloak\driver\adaptor\XdebugAdaptor;
+use cloak\analyzer\adaptor\XdebugAdaptor;
 
 
 describe(XdebugAdaptor::class, function() {

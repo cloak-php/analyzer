@@ -9,14 +9,14 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\driver\adaptor;
+namespace cloak\analyzer\adaptor;
 
 use Exception;
 
 
 /**
  * Class AdaptorNotFoundException
- * @package cloak\driver\adaptor
+ * @package cloak\analyzer\adaptor
  */
 class AdaptorNotFoundException extends Exception
 {

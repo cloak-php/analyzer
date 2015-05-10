@@ -9,12 +9,12 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\driver;
+namespace cloak\analyzer;
 
 
 /**
  * Class AnalyzerDriver
- * @package cloak\driver
+ * @package cloak\analyzer
  */
 final class AnalyzerDriver implements Driver
 {

@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-use cloak\driver\Result;
-use cloak\driver\result\FileResult;
-use cloak\driver\result\LineResult;
+use cloak\analyzer\Result;
+use cloak\analyzer\result\FileResult;
+use cloak\analyzer\result\LineResult;
 
 
 describe(Result::class, function() {

@@ -9,15 +9,15 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\driver;
+namespace cloak\analyzer;
 
-use cloak\driver\adaptor\AdaptorNotFoundException;
-use cloak\driver\adaptor\AdaptorNotAvailableException;
+use cloak\analyzer\adaptor\AdaptorNotFoundException;
+use cloak\analyzer\adaptor\AdaptorNotAvailableException;
 
 
 /**
  * Class AdaptorDetector
- * @package cloak\driver
+ * @package cloak\analyzer
  */
 class AdaptorDetector implements AdaptorDetectorInterface
 {

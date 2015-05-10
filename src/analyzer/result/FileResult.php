@@ -9,14 +9,14 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\driver\result;
+namespace cloak\analyzer\result;
 
 
 use Eloquent\Pathogen\Factory\PathFactory;
 
 /**
  * Class FileResult
- * @package cloak\driver\result
+ * @package cloak\analyzer\result
  */
 class FileResult
 {

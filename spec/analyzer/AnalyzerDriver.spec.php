@@ -11,9 +11,9 @@
 
 
 use Prophecy\Prophet;
-use cloak\driver\AnalyzerDriver;
-use cloak\driver\Adaptor;
-use cloak\driver\Result;
+use cloak\analyzer\AnalyzerDriver;
+use cloak\analyzer\Adaptor;
+use cloak\analyzer\Result;
 
 
 describe(AnalyzerDriver::class, function() {

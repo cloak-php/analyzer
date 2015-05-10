@@ -9,11 +9,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\driver;
+namespace cloak\analyzer;
 
 /**
  * Interface AdaptorDetectorInterface
- * @package cloak\driver
+ * @package cloak\analyzer
  */
 interface AdaptorDetectorInterface
 {

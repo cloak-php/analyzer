@@ -9,14 +9,14 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\driver\adaptor;
+namespace cloak\analyzer\adaptor;
 
-use cloak\driver\Adaptor;
+use cloak\analyzer\Adaptor;
 
 
 /**
  * Class XdebugAdaptor
- * @package cloak\driver
+ * @package cloak\analyzer
  */
 class XdebugAdaptor implements Adaptor
 {

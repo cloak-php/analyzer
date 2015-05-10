@@ -9,17 +9,17 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\driver;
+namespace cloak\analyzer;
 
-use cloak\driver\result\FileResult;
-use cloak\driver\result\FileNotFoundException;
-use cloak\driver\result\collection\FileResultCollection;
+use cloak\analyzer\result\FileResult;
+use cloak\analyzer\result\FileNotFoundException;
+use cloak\analyzer\result\collection\FileResultCollection;
 use Closure;
 
 
 /**
  * Class Result
- * @package cloak\driver
+ * @package cloak\analyzer
  */
 class Result
 {

@@ -9,11 +9,11 @@
  * with this source code in the file LICENSE.
  */
 
-use cloak\driver\AdaptorDetector;
-use cloak\driver\Adaptor;
-use cloak\driver\adaptor\AdaptorNotFoundException;
-use cloak\spec\driver\adaptor\EnableFixtureAdaptor;
-use cloak\spec\driver\adaptor\FixtureAdaptor;
+use cloak\analyzer\AdaptorDetector;
+use cloak\analyzer\Adaptor;
+use cloak\analyzer\adaptor\AdaptorNotFoundException;
+use cloak\spec\analyzer\adaptor\EnableFixtureAdaptor;
+use cloak\spec\analyzer\adaptor\FixtureAdaptor;
 
 
 describe(AdaptorDetector::class, function() {
