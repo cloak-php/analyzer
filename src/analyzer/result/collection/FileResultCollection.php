@@ -34,7 +34,7 @@ class FileResultCollection implements Countable, IteratorAggregate
     private $collection;
 
     /**
-     * @param \cloak\driver\result\FileResult[] $files
+     * @param array<string, \cloak\analyzer\result\FileResult> $files
      */
     public function __construct(array $files = [])
     {
