@@ -25,8 +25,8 @@ describe(FileResultCollection::class, function() {
                 $this->result->getPath() => $this->result
             ]);
         });
-        context('when conditions matched', function() {
-            it('returns only those that match the conditions', function() {
+        context('when all conditions matched', function() {
+            it('returns the included results', function() {
                 $result = $this->collection->includeFiles([
                     function(FileResult $result) {
                         return $result->matchPath('foo.php');
@@ -43,6 +43,38 @@ describe(FileResultCollection::class, function() {
                     }
                 ]);
                 expect($result)->toBeEmpty();
+            });
+        });
+    });
+
+    describe('#excludeFiles', function() {
+        beforeEach(function() {
+            $rootDirectory = __DIR__ . '/../../../fixtures/src/';
+            $filePath = $rootDirectory . 'foo.php';
+
+            $this->result = new FileResult($filePath);
+            $this->collection = new FileResultCollection([
+                $this->result->getPath() => $this->result
+            ]);
+        });
+        context('when all conditions matched', function() {
+            it('returns the excluded results', function() {
+                $result = $this->collection->excludeFiles([
+                    function(FileResult $result) {
+                        return $result->matchPath('foo.php');
+                    }
+                ]);
+                expect($result)->toBeEmpty();
+            });
+        });
+        context('when not conditions matched', function() {
+            it('returns the raw results', function() {
+                $result = $this->collection->excludeFiles([
+                    function(FileResult $result) {
+                        return $result->matchPath('bar.php');
+                    }
+                ]);
+                expect($result)->toHaveLength(1);
             });
         });
     });
