@@ -40,7 +40,7 @@ class AdapterResolver implements AdapterResolvable
      * @return \cloak\analyzer\AnalyzeAdapter
      * @throws AdapterNotFoundException
      */
-    public function detect()
+    public function resolve()
     {
         $result = null;
         $exceptions = [];

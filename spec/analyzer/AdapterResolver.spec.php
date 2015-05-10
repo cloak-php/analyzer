@@ -18,27 +18,27 @@ use cloak\spec\analyzer\adapter\FixtureAdapter;
 
 describe(AdapterResolver::class, function() {
 
-    describe('#detect', function() {
+    describe('#resolve', function() {
         context('when enabled', function() {
             beforeEach(function() {
-                $this->detector = new AdapterResolver([
+                $this->resolver = new AdapterResolver([
                     EnableFixtureAdapter::class
                 ]);
             });
             it('return adapter instance', function() {
-                $adapter = $this->detector->detect();
+                $adapter = $this->resolver->resolve();
                 expect($adapter)->toBeAnInstanceOf(AnalyzeAdapter::class);
             });
         });
         context('when not enabled', function() {
             beforeEach(function() {
-                $this->detector = new AdapterResolver([
+                $this->resolver = new AdapterResolver([
                     FixtureAdapter::class
                 ]);
             });
             it('throw cloak\driver\adapter\AdapterNotFoundException', function() {
                 expect(function() {
-                    $this->detector->detect();
+                    $this->resolver->resolve();
                 })->toThrow(AdapterNotFoundException::class);
             });
         });
