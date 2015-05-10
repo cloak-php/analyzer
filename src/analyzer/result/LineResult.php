@@ -22,36 +22,35 @@ class LineResult
     const UNUSED = -1;
     const DEAD = -2;
 
-    private $file = null;
+//    private $file = null;
     private $lineNumber = null;
     private $analyzeResult = null;
 
-    public function __construct($lineNumber = 0, $analyzeResult = self::EXECUTED, FileResult $file = null)
+    public function __construct($lineNumber = 0, $analyzeResult = self::EXECUTED)
     {
         $this->lineNumber = $lineNumber;
         $this->analyzeResult = $analyzeResult;
-        $this->file = $file;
     }
 
-    public function isFileAssociated()
-    {
-        return is_null($this->file) === false;
-    }
+//    public function isFileAssociated()
+  //  {
+    //    return is_null($this->file) === false;
+//    }
 
-    public function link(FileResult $file)
-    {
-        $this->file = $file;
-    }
+//    public function link(FileResult $file)
+  //  {
+    //    $this->file = $file;
+//    }
 
-    public function unlink()
-    {
-        $this->file = null;
-    }
+//    public function unlink()
+  //  {
+    //    $this->file = null;
+//    }
 
-    public function getFile()
-    {
-        return $this->file;
-    }
+//    public function getFile()
+  //  {
+    //    return $this->file;
+//    }
 
     public function getLineNumber()
     {
@@ -86,7 +85,7 @@ class LineResult
 
     public function equals(LineResult $line)
     {
-        return ($line->getLineNumber() === $this->getLineNumber() && $line->getFile() === $this->getFile());
+        return ($line->getLineNumber() === $this->getLineNumber() && $line->getAnalyzeResult() === $this->getAnalyzeResult());
     }
 
 }
