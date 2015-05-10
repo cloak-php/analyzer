@@ -13,7 +13,7 @@
 use Prophecy\Prophet;
 use cloak\analyzer\Analyzer;
 use cloak\analyzer\AnalyzeAdaptor;
-use cloak\analyzer\Result;
+use cloak\analyzer\AnalyzedResult;
 
 
 describe(Analyzer::class, function() {
@@ -79,7 +79,7 @@ describe(Analyzer::class, function() {
             });
             it('return cloak\driver\Result', function() {
                 $result = $this->driver->getAnalyzeResult();
-                expect($result)->toBeAnInstanceOf(Result::class);
+                expect($result)->toBeAnInstanceOf(AnalyzedResult::class);
             });
         });
     });

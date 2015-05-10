@@ -67,11 +67,11 @@ final class Analyzer implements AnalyzeDriver
     }
 
     /**
-     * @return Result
+     * @return AnalyzedResult
      */
     public function getAnalyzeResult()
     {
-        return Result::fromArray($this->analyzeResult);
+        return AnalyzedResult::fromArray($this->analyzeResult);
     }
 
 }

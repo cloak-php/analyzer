@@ -9,12 +9,12 @@
  * with this source code in the file LICENSE.
  */
 
-use cloak\analyzer\Result;
+use cloak\analyzer\AnalyzedResult;
 use cloak\analyzer\result\FileResult;
 use cloak\analyzer\result\LineResult;
 
 
-describe(Result::class, function() {
+describe(AnalyzedResult::class, function() {
     beforeEach(function() {
         $this->rootDirectory = __DIR__ . '/../fixtures/src/';
         $this->fixtureFilePath = $this->rootDirectory . 'foo.php';
@@ -27,16 +27,16 @@ describe(Result::class, function() {
                     1 => LineResult::EXECUTED
                 ]
             ];
-            $this->returnValue = Result::fromArray($results);
+            $this->returnValue = AnalyzedResult::fromArray($results);
         });
         it('return cloak\driver\Result instance', function() {
-            expect($this->returnValue)->toBeAnInstanceOf(Result::class);
+            expect($this->returnValue)->toBeAnInstanceOf(AnalyzedResult::class);
         });
     });
 
     describe('#addFile', function() {
         beforeEach(function() {
-            $this->result = new Result();
+            $this->result = new AnalyzedResult();
             $this->result->addFile(new FileResult($this->fixtureFilePath));
         });
         it('add file', function() {
@@ -47,7 +47,7 @@ describe(Result::class, function() {
     describe('#isEmpty', function() {
         context('when empty', function() {
             beforeEach(function() {
-                $this->result = new Result();
+                $this->result = new AnalyzedResult();
             });
             it('return true', function() {
                 expect($this->result->isEmpty())->toBeTrue();
@@ -55,7 +55,7 @@ describe(Result::class, function() {
         });
         context('when not empty', function() {
             beforeEach(function() {
-                $this->result = new Result();
+                $this->result = new AnalyzedResult();
                 $this->result->addFile(new FileResult($this->fixtureFilePath));
             });
             it('return false', function() {

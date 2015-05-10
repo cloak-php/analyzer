@@ -18,10 +18,10 @@ use Closure;
 
 
 /**
- * Class Result
+ * Class AnalyzedResult
  * @package cloak\analyzer
  */
-class Result
+class AnalyzedResult
 {
 
     /**
