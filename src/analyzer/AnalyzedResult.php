@@ -101,8 +101,13 @@ class AnalyzedResult
      */
     public function includeFiles(array $filters)
     {
-        $files = $this->files->includeFiles($filters);
-        return $this->createNew($files);
+        $newResult = $this;
+
+        foreach ($filters as $filter) {
+            $newResult = $this->includeFile($filter);
+        }
+
+        return $newResult;
     }
 
     /**
@@ -121,8 +126,13 @@ class AnalyzedResult
      */
     public function excludeFiles(array $filters)
     {
-        $files = $this->files->excludeFiles($filters);
-        return $this->createNew($files);
+        $newResult = $this;
+
+        foreach ($filters as $filter) {
+            $newResult = $this->excludeFile($filter);
+        }
+
+        return $newResult;
     }
 
     /**
