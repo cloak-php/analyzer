@@ -11,31 +11,19 @@
 
 namespace cloak\analyzer;
 
+
 /**
- * Interface Driver
- * @package cloak\driver
+ * Interface Adaptor
+ * @package cloak\analyzer
  */
-interface Driver
+interface AnalyzeAdaptor
 {
 
-    /**
-     * @return void
-     */
     public function start();
 
     /**
-     * @return void
+     * @return array
      */
     public function stop();
-
-    /**
-     * @return boolean
-     */
-    public function isStarted();
-
-    /**
-     * @return Result
-     */
-    public function getAnalyzeResult();
 
 }

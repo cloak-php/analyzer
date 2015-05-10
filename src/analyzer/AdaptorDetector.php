@@ -37,7 +37,7 @@ class AdaptorDetector implements AdaptorDetectorInterface
     }
 
     /**
-     * @return \cloak\driver\AdaptorInterface
+     * @return \cloak\driver\AnalyzeAdaptor
      * @throws AdaptorNotFoundException
      */
     public function detect()
