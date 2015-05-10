@@ -40,7 +40,7 @@ class AnalyzedResult
 
     /**
      * @param array $results
-     * @return Result
+     * @return AnalyzedResult
      */
     public static function fromArray(array $results)
     {
@@ -87,7 +87,7 @@ class AnalyzedResult
 
     /**
      * @param callable $filter
-     * @return Result
+     * @return AnalyzedResult
      */
     public function includeFile(Closure $filter)
     {
@@ -97,7 +97,7 @@ class AnalyzedResult
 
     /**
      * @param array $filters
-     * @return Result
+     * @return AnalyzedResult
      */
     public function includeFiles(array $filters)
     {
@@ -107,7 +107,7 @@ class AnalyzedResult
 
     /**
      * @param callable $filter
-     * @return Result
+     * @return AnalyzedResult
      */
     public function excludeFile(Closure $filter)
     {
@@ -117,7 +117,7 @@ class AnalyzedResult
 
     /**
      * @param array $filters
-     * @return Result
+     * @return AnalyzedResult
      */
     public function excludeFiles(array $filters)
     {
@@ -143,7 +143,7 @@ class AnalyzedResult
 
     /**
      * @param FileResultCollection $collection
-     * @return Result
+     * @return AnalyzedResult
      */
     private function createNew(FileResultCollection $collection)
     {
