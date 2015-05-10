@@ -22,7 +22,7 @@ class FileResult
 {
 
     /**
-     * @var \cloak\value\Path
+     * @var string
      */
     private $path;
 
@@ -35,7 +35,7 @@ class FileResult
     /**
      * @param string $path
      * @param array $resultLines
-     * @throws \cloak\driver\result\FileNotFoundException
+     * @throws \cloak\analyzer\result\FileNotFoundException
      */
     public function __construct($path, $resultLines = [])
     {

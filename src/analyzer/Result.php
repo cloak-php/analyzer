@@ -31,7 +31,7 @@ class Result
 
 
     /**
-     * @param \cloak\driver\result\FileResult[] $files
+     * @param \cloak\analyzer\result\FileResult[] $files
      */
     public function __construct(array $files = [])
     {
@@ -50,7 +50,7 @@ class Result
 
     /**
      * @param array $results
-     * @return \cloak\driver\result\FileResult[]
+     * @return \cloak\analyzer\result\FileResult[]
      */
     protected static function parseResult(array $results)
     {

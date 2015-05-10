@@ -19,8 +19,8 @@ interface AdaptorDetectorInterface
 {
 
     /**
-     * @return \cloak\driver\AdaptorInterface
-     * @throws \cloak\driver\adaptor\AdaptorNotFoundException
+     * @return \cloak\analyzer\analyzeAdaptor
+     * @throws \cloak\analyzer\adaptor\AdaptorNotFoundException
      */
     public function detect();
 
