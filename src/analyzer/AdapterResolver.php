@@ -11,8 +11,8 @@
 
 namespace cloak\analyzer;
 
-use cloak\analyzer\adaptor\AdapterNotFoundException;
-use cloak\analyzer\adaptor\AdapterNotAvailableException;
+use cloak\analyzer\adapter\AdapterNotFoundException;
+use cloak\analyzer\adapter\AdapterNotAvailableException;
 
 
 /**
@@ -25,15 +25,15 @@ class AdapterResolver implements AdapterResolvable
     /**
      * @var array
      */
-    private $adaptors;
+    private $adapters;
 
 
     /**
-     * @param array $adaptors
+     * @param array $adapters
      */
-    public function __construct(array $adaptors)
+    public function __construct(array $adapters)
     {
-        $this->adaptors = $adaptors;
+        $this->adapters = $adapters;
     }
 
     /**
@@ -45,16 +45,16 @@ class AdapterResolver implements AdapterResolvable
         $result = null;
         $exceptions = [];
 
-        foreach ($this->adaptors as $adaptor) {
+        foreach ($this->adapters as $adapter) {
             try {
-                $result = new $adaptor();
+                $result = new $adapter();
                 break;
             } catch (AdapterNotAvailableException $exception) {
                 $exceptions[] = $exception->getMessage();
             }
         }
 
-        if (count($exceptions) === count($this->adaptors)) {
+        if (count($exceptions) === count($this->adapters)) {
             throw new AdapterNotFoundException($exceptions);
         }
 

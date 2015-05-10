@@ -23,11 +23,11 @@ describe(Analyzer::class, function() {
             beforeEach(function() {
                 $this->prophet = new Prophet();
 
-                $adaptor = $this->prophet->prophesize(AnalyzeAdapter::class);
-                $adaptor->start()->shouldNotBeCalled();
-                $adaptor->stop()->shouldNotBeCalled();
+                $adapter = $this->prophet->prophesize(AnalyzeAdapter::class);
+                $adapter->start()->shouldNotBeCalled();
+                $adapter->stop()->shouldNotBeCalled();
 
-                $this->dirver = new Analyzer($adaptor->reveal());
+                $this->dirver = new Analyzer($adapter->reveal());
             });
             it('return false', function() {
                 expect($this->dirver->isStarted())->toBeFalse();
@@ -37,11 +37,11 @@ describe(Analyzer::class, function() {
             beforeEach(function() {
                 $this->prophet = new Prophet();
 
-                $adaptor = $this->prophet->prophesize(AnalyzeAdapter::class);
-                $adaptor->start()->shouldBeCalled();
-                $adaptor->stop()->shouldNotBeCalled();
+                $adapter = $this->prophet->prophesize(AnalyzeAdapter::class);
+                $adapter->start()->shouldBeCalled();
+                $adapter->stop()->shouldNotBeCalled();
 
-                $this->dirver = new Analyzer($adaptor->reveal());
+                $this->dirver = new Analyzer($adapter->reveal());
             });
             it('return true', function() {
                 $this->dirver->start();
@@ -52,11 +52,11 @@ describe(Analyzer::class, function() {
             beforeEach(function() {
                 $this->prophet = new Prophet();
 
-                $adaptor = $this->prophet->prophesize(AnalyzeAdapter::class);
-                $adaptor->start()->shouldBeCalled();
-                $adaptor->stop()->shouldBeCalled();
+                $adapter = $this->prophet->prophesize(AnalyzeAdapter::class);
+                $adapter->start()->shouldBeCalled();
+                $adapter->stop()->shouldBeCalled();
 
-                $this->dirver = new Analyzer($adaptor->reveal());
+                $this->dirver = new Analyzer($adapter->reveal());
             });
             it('return true', function() {
                 $this->dirver->start();
@@ -71,11 +71,11 @@ describe(Analyzer::class, function() {
             beforeEach(function() {
                 $this->prophet = new Prophet();
 
-                $adaptor = $this->prophet->prophesize(AnalyzeAdapter::class);
-                $adaptor->start()->shouldNotBeCalled();
-                $adaptor->stop()->shouldNotBeCalled();
+                $adapter = $this->prophet->prophesize(AnalyzeAdapter::class);
+                $adapter->start()->shouldNotBeCalled();
+                $adapter->stop()->shouldNotBeCalled();
 
-                $this->driver = new Analyzer($adaptor->reveal());
+                $this->driver = new Analyzer($adapter->reveal());
             });
             it('return cloak\driver\Result', function() {
                 $result = $this->driver->getAnalyzeResult();

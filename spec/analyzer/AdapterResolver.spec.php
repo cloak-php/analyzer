@@ -11,9 +11,9 @@
 
 use cloak\analyzer\AdapterResolver;
 use cloak\analyzer\AnalyzeAdapter;
-use cloak\analyzer\adaptor\AdapterNotFoundException;
-use cloak\spec\analyzer\adaptor\EnableFixtureAdapter;
-use cloak\spec\analyzer\adaptor\FixtureAdapter;
+use cloak\analyzer\adapter\AdapterNotFoundException;
+use cloak\spec\analyzer\adapter\EnableFixtureAdapter;
+use cloak\spec\analyzer\adapter\FixtureAdapter;
 
 
 describe(AdapterResolver::class, function() {
@@ -25,9 +25,9 @@ describe(AdapterResolver::class, function() {
                     EnableFixtureAdapter::class
                 ]);
             });
-            it('return adaptor instance', function() {
-                $adaptor = $this->detector->detect();
-                expect($adaptor)->toBeAnInstanceOf(AnalyzeAdapter::class);
+            it('return adapter instance', function() {
+                $adapter = $this->detector->detect();
+                expect($adapter)->toBeAnInstanceOf(AnalyzeAdapter::class);
             });
         });
         context('when not enabled', function() {
@@ -36,7 +36,7 @@ describe(AdapterResolver::class, function() {
                     FixtureAdapter::class
                 ]);
             });
-            it('throw cloak\driver\adaptor\AdapterNotFoundException', function() {
+            it('throw cloak\driver\adapter\AdapterNotFoundException', function() {
                 expect(function() {
                     $this->detector->detect();
                 })->toThrow(AdapterNotFoundException::class);

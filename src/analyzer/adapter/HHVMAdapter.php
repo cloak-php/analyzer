@@ -9,14 +9,14 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\analyzer\adaptor;
+namespace cloak\analyzer\adapter;
 
 use cloak\analyzer\AnalyzeAdapter;
 
 
 /**
  * Class HHVMAdapter
- * @package cloak\analyzer\adaptor
+ * @package cloak\analyzer\adapter
  */
 class HHVMAdapter implements AnalyzeAdapter
 {

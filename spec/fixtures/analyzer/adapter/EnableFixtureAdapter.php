@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\spec\analyzer\adaptor;
+namespace cloak\spec\analyzer\adapter;
 
 
 use cloak\analyzer\AnalyzeAdapter;

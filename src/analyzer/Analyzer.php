@@ -20,9 +20,9 @@ final class Analyzer implements AnalyzeDriver
 {
 
     /**
-     * @var AnalyzeAdaptor
+     * @var Analyzeadapter
      */
-    private $adaptor;
+    private $adapter;
 
 
     /**
@@ -37,23 +37,23 @@ final class Analyzer implements AnalyzeDriver
 
 
     /**
-     * @param AnalyzeAdaptor $adaptor
+     * @param Analyzeadapter $adapter
      */
-    public function __construct(AnalyzeAdaptor $adaptor)
+    public function __construct(Analyzeadapter $adapter)
     {
-        $this->adaptor = $adaptor;
+        $this->adapter = $adapter;
     }
 
 
     public function start()
     {
-        $this->adaptor->start();
+        $this->adapter->start();
         $this->started = true;
     }
 
     public function stop()
     {
-        $result = $this->adaptor->stop();
+        $result = $this->adapter->stop();
         $this->analyzeResult = $result;
         $this->started = false;
     }

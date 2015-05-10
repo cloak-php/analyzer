@@ -9,13 +9,13 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\analyzer\adaptor;
+namespace cloak\analyzer\adapter;
 
 use Exception;
 
 /**
  * Class AdapterNotAvailableException
- * @package cloak\analyzer\adaptor
+ * @package cloak\analyzer\adapter
  */
 class AdapterNotAvailableException extends Exception
 {

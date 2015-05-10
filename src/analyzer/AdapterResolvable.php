@@ -20,7 +20,7 @@ interface AdapterResolvable
 
     /**
      * @return \cloak\analyzer\AnalyzeAdapter
-     * @throws \cloak\analyzer\adaptor\AdapterNotFoundException
+     * @throws \cloak\analyzer\adapter\AdapterNotFoundException
      */
     public function detect();
 

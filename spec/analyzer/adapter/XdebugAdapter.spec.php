@@ -9,15 +9,15 @@
  * with this source code in the file LICENSE.
  */
 
-use cloak\analyzer\adaptor\XdebugAdapter;
+use cloak\analyzer\adapter\XdebugAdapter;
 
 
 describe(XdebugAdapter::class, function() {
     describe('#stop', function() {
         beforeEach(function() {
-            $this->adaptor = new XdebugAdapter();
-            $this->adaptor->start();
-            $this->results = $this->adaptor->stop();
+            $this->adapter = new XdebugAdapter();
+            $this->adapter->start();
+            $this->results = $this->adapter->stop();
         });
         it('report of coverage is being collected', function() {
             expect($this->results)->toBeAn('array');

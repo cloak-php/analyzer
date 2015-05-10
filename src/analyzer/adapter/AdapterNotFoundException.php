@@ -9,14 +9,14 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\analyzer\adaptor;
+namespace cloak\analyzer\adapter;
 
 use Exception;
 
 
 /**
  * Class AdapterNotFoundException
- * @package cloak\analyzer\adaptor
+ * @package cloak\analyzer\adapter
  */
 class AdapterNotFoundException extends Exception
 {
