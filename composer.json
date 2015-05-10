@@ -1,5 +1,5 @@
 {
-    "name": "cloak/analyzer",
+    "name": "cloak/cloak-analyzer",
     "keywords": [ "code coverage", "markdown report", "lcov report", "tree report", "text report", "php" ],
     "description": "Modern code coverage analysis library",
     "require": {
