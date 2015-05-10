@@ -9,19 +9,19 @@
  * with this source code in the file LICENSE.
  */
 
-use cloak\analyzer\AdaptorDetector;
+use cloak\analyzer\AdapterResolver;
 use cloak\analyzer\AnalyzeAdaptor;
 use cloak\analyzer\adaptor\AdaptorNotFoundException;
 use cloak\spec\analyzer\adaptor\EnableFixtureAdaptor;
 use cloak\spec\analyzer\adaptor\FixtureAdaptor;
 
 
-describe(AdaptorDetector::class, function() {
+describe(AdapterResolver::class, function() {
 
     describe('#detect', function() {
         context('when enabled', function() {
             beforeEach(function() {
-                $this->detector = new AdaptorDetector([
+                $this->detector = new AdapterResolver([
                     EnableFixtureAdaptor::class
                 ]);
             });
@@ -32,7 +32,7 @@ describe(AdaptorDetector::class, function() {
         });
         context('when not enabled', function() {
             beforeEach(function() {
-                $this->detector = new AdaptorDetector([
+                $this->detector = new AdapterResolver([
                     FixtureAdaptor::class
                 ]);
             });

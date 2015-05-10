@@ -16,10 +16,10 @@ use cloak\analyzer\adaptor\AdaptorNotAvailableException;
 
 
 /**
- * Class AdaptorDetector
+ * Class AdapterResolver
  * @package cloak\analyzer
  */
-class AdaptorDetector implements AdaptorDetectorInterface
+class AdapterResolver implements AdapterResolvable
 {
 
     /**

@@ -12,10 +12,10 @@
 namespace cloak\analyzer;
 
 /**
- * Interface AdaptorDetectorInterface
+ * Interface AdapterResolvable
  * @package cloak\analyzer
  */
-interface AdaptorDetectorInterface
+interface AdapterResolvable
 {
 
     /**
