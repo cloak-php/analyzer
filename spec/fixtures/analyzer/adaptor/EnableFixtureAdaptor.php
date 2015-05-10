@@ -9,10 +9,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\spec\driver\adaptor;
+namespace cloak\spec\analyzer\adaptor;
 
 
-use cloak\driver\Adaptor;
+use cloak\analyzer\Adaptor;
 
 
 class EnableFixtureAdaptor implements Adaptor

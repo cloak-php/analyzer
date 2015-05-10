@@ -9,11 +9,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\spec\driver\adaptor;
+namespace cloak\spec\analyzer\adaptor;
 
 
-use cloak\driver\Adaptor;
-use cloak\driver\adaptor\AdaptorNotAvailableException;
+use cloak\analyzer\Adaptor;
+use cloak\analyzer\adaptor\AdaptorNotAvailableException;
 
 
 class FixtureAdaptor implements Adaptor

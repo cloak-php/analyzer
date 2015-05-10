@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\driver;
+namespace cloak\analyzer;
 
 /**
  * Interface Driver

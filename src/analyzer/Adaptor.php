@@ -9,14 +9,21 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\driver\adaptor;
+namespace cloak\analyzer;
 
-use Exception;
 
 /**
- * Class AdaptorNotAvailableException
- * @package cloak\driver\adaptor
+ * Interface Adaptor
+ * @package cloak\analyzer
  */
-class AdaptorNotAvailableException extends Exception
+interface Adaptor
 {
+
+    public function start();
+
+    /**
+     * @return array
+     */
+    public function stop();
+
 }

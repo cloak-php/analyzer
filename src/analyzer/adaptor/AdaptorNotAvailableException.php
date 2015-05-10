@@ -9,14 +9,14 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\driver\result;
+namespace cloak\analyzer\adaptor;
 
-use UnexpectedValueException;
+use Exception;
 
 /**
- * Class FileNotFoundException
- * @package cloak\driver\result
+ * Class AdaptorNotAvailableException
+ * @package cloak\analyzer\adaptor
  */
-class FileNotFoundException extends UnexpectedValueException
+class AdaptorNotAvailableException extends Exception
 {
 }

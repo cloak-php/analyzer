@@ -9,21 +9,14 @@
  * with this source code in the file LICENSE.
  */
 
-namespace cloak\driver;
+namespace cloak\analyzer\result;
 
+use UnexpectedValueException;
 
 /**
- * Interface Adaptor
- * @package cloak\driver
+ * Class FileNotFoundException
+ * @package cloak\analyzer\result
  */
-interface Adaptor
+class FileNotFoundException extends UnexpectedValueException
 {
-
-    public function start();
-
-    /**
-     * @return array
-     */
-    public function stop();
-
 }
