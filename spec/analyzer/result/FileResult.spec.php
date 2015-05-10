@@ -47,4 +47,28 @@ describe(FileResult::class, function() {
             });
         });
     });
+
+    describe('#matchPaths', function() {
+        beforeEach(function() {
+            $rootDirectory = __DIR__ . '/../../fixtures/src/';
+
+            $filePath = $rootDirectory . 'foo.php';
+            $this->file = new FileResult($filePath);
+        });
+        context('when match', function() {
+            it('return true', function() {
+                expect($this->file->matchPaths([
+                    '/fixtures'
+                ]))->toBeTrue();
+            });
+        });
+        context('when unmatch', function() {
+            it('return false', function() {
+                expect($this->file->matchPaths([
+                    '/bar'
+                ]))->toBeFalse();
+            });
+        });
+    });
+
 });
