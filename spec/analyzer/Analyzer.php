@@ -11,12 +11,12 @@
 
 
 use Prophecy\Prophet;
-use cloak\analyzer\AnalyzerDriver;
+use cloak\analyzer\Analyzer;
 use cloak\analyzer\Adaptor;
 use cloak\analyzer\Result;
 
 
-describe(AnalyzerDriver::class, function() {
+describe(Analyzer::class, function() {
 
     describe('#isStarted', function() {
         context('when after instantiation', function() {
