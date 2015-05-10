@@ -11,10 +11,10 @@
 
 namespace cloak\driver\result\collection;
 
-use cloak\collection\PairStackable;
 use cloak\driver\result\FileResult;
 use PhpCollection\Map;
 use PhpCollection\AbstractMap;
+use PhpOption\Option;
 use \Closure;
 use \IteratorAggregate;
 use \Countable;
@@ -27,8 +27,11 @@ use \Countable;
 class FileResultCollection implements Countable, IteratorAggregate
 {
 
-    use PairStackable;
 
+    /**
+     * @var \PhpCollection\Map
+     */
+    private $collection;
 
     /**
      * @param \cloak\driver\result\FileResult[] $files
@@ -52,6 +55,82 @@ class FileResultCollection implements Countable, IteratorAggregate
     public function all()
     {
         return $this->toArray();
+    }
+
+    /**
+     * @return mixed|null
+     */
+    public function first()
+    {
+        $first = $this->collection->first();
+        return $this->returnValue($first);
+    }
+
+    /**
+     * @return mixed|null
+     */
+    public function last()
+    {
+        $last = $this->collection->last();
+        return $this->returnValue($last);
+    }
+
+    /**
+     * @param Option $value
+     * @return mixed|null
+     */
+    private function returnValue(Option $value)
+    {
+        if ($value->isEmpty()) {
+            return null;
+        }
+        $kv = $value->get();
+
+        return array_pop($kv);
+    }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        return $this->createArray($this->collection);
+    }
+
+    /**
+     * @param AbstractMap $collection
+     * @return array
+     */
+    protected function createArray(AbstractMap $collection)
+    {
+        $keys = $collection->keys();
+        $values = $collection->values();
+
+        return array_combine($keys, $values);
+    }
+
+    /**
+     * @return int
+     */
+    public function isEmpty()
+    {
+        return $this->collection->isEmpty();
+    }
+
+    /**
+     * @return int
+     */
+    public function count()
+    {
+        return $this->collection->count();
+    }
+
+    /**
+     * @return \ArrayIterator|\Traversable
+     */
+    public function getIterator()
+    {
+        return $this->collection->getIterator();
     }
 
     /**
