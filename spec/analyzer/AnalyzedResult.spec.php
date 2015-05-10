@@ -64,4 +64,58 @@ describe(AnalyzedResult::class, function() {
         });
     });
 
+    describe('#includeFiles', function() {
+        beforeEach(function() {
+            $this->result = new AnalyzedResult();
+            $this->result->addFile(new FileResult($this->fixtureFilePath));
+        });
+        context('when all conditions matched', function() {
+            it('returns the included results', function() {
+                $result = $this->result->includeFiles([
+                    function(FileResult $result) {
+                        return $result->matchPath('foo.php');
+                    }
+                ]);
+                expect($result->getFileCount())->toBe(1);
+            });
+        });
+        context('when not conditions matched', function() {
+            it('returns an empty result', function() {
+                $result = $this->result->includeFiles([
+                    function(FileResult $result) {
+                        return $result->matchPath('bar.php');
+                    }
+                ]);
+                expect($result->getFileCount())->toBe(0);
+            });
+        });
+    });
+
+    describe('#excludeFiles', function() {
+        beforeEach(function() {
+            $this->result = new AnalyzedResult();
+            $this->result->addFile(new FileResult($this->fixtureFilePath));
+        });
+        context('when all conditions matched', function() {
+            it('returns the excluded results', function() {
+                $result = $this->result->excludeFiles([
+                    function(FileResult $result) {
+                        return $result->matchPath('foo.php');
+                    }
+                ]);
+                expect($result->getFileCount())->toBe(0);
+            });
+        });
+        context('when not conditions matched', function() {
+            it('returns the raw results', function() {
+                $result = $this->result->excludeFiles([
+                    function(FileResult $result) {
+                        return $result->matchPath('bar.php');
+                    }
+                ]);
+                expect($result->getFileCount())->toBe(1);
+            });
+        });
+    });
+
 });
