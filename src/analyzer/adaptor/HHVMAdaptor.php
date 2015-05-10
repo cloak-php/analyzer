@@ -11,14 +11,14 @@
 
 namespace cloak\analyzer\adaptor;
 
-use cloak\analyzer\Adaptor;
+use cloak\analyzer\AnalyzeAdaptor;
 
 
 /**
  * Class HHVMAdaptor
  * @package cloak\analyzer\adaptor
  */
-class HHVMAdaptor implements Adaptor
+class HHVMAdaptor implements AnalyzeAdaptor
 {
 
     public function __construct()

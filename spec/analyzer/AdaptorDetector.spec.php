@@ -10,7 +10,7 @@
  */
 
 use cloak\analyzer\AdaptorDetector;
-use cloak\analyzer\Adaptor;
+use cloak\analyzer\AnalyzeAdaptor;
 use cloak\analyzer\adaptor\AdaptorNotFoundException;
 use cloak\spec\analyzer\adaptor\EnableFixtureAdaptor;
 use cloak\spec\analyzer\adaptor\FixtureAdaptor;
@@ -27,7 +27,7 @@ describe(AdaptorDetector::class, function() {
             });
             it('return adaptor instance', function() {
                 $adaptor = $this->detector->detect();
-                expect($adaptor)->toBeAnInstanceOf(Adaptor::class);
+                expect($adaptor)->toBeAnInstanceOf(AnalyzeAdaptor::class);
             });
         });
         context('when not enabled', function() {

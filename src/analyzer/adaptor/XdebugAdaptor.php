@@ -11,14 +11,14 @@
 
 namespace cloak\analyzer\adaptor;
 
-use cloak\analyzer\Adaptor;
+use cloak\analyzer\AnalyzeAdaptor;
 
 
 /**
  * Class XdebugAdaptor
  * @package cloak\analyzer
  */
-class XdebugAdaptor implements Adaptor
+class XdebugAdaptor implements AnalyzeAdaptor
 {
 
     public function __construct()

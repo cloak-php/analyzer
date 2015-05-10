@@ -12,7 +12,7 @@
 
 use Prophecy\Prophet;
 use cloak\analyzer\Analyzer;
-use cloak\analyzer\Adaptor;
+use cloak\analyzer\AnalyzeAdaptor;
 use cloak\analyzer\Result;
 
 
@@ -23,7 +23,7 @@ describe(Analyzer::class, function() {
             beforeEach(function() {
                 $this->prophet = new Prophet();
 
-                $adaptor = $this->prophet->prophesize(Adaptor::class);
+                $adaptor = $this->prophet->prophesize(AnalyzeAdaptor::class);
                 $adaptor->start()->shouldNotBeCalled();
                 $adaptor->stop()->shouldNotBeCalled();
 
@@ -37,7 +37,7 @@ describe(Analyzer::class, function() {
             beforeEach(function() {
                 $this->prophet = new Prophet();
 
-                $adaptor = $this->prophet->prophesize(Adaptor::class);
+                $adaptor = $this->prophet->prophesize(AnalyzeAdaptor::class);
                 $adaptor->start()->shouldBeCalled();
                 $adaptor->stop()->shouldNotBeCalled();
 
@@ -52,7 +52,7 @@ describe(Analyzer::class, function() {
             beforeEach(function() {
                 $this->prophet = new Prophet();
 
-                $adaptor = $this->prophet->prophesize(Adaptor::class);
+                $adaptor = $this->prophet->prophesize(AnalyzeAdaptor::class);
                 $adaptor->start()->shouldBeCalled();
                 $adaptor->stop()->shouldBeCalled();
 
@@ -71,7 +71,7 @@ describe(Analyzer::class, function() {
             beforeEach(function() {
                 $this->prophet = new Prophet();
 
-                $adaptor = $this->prophet->prophesize(Adaptor::class);
+                $adaptor = $this->prophet->prophesize(AnalyzeAdaptor::class);
                 $adaptor->start()->shouldNotBeCalled();
                 $adaptor->stop()->shouldNotBeCalled();
 
