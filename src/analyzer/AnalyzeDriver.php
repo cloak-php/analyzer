@@ -34,7 +34,7 @@ interface AnalyzeDriver
     public function isStarted();
 
     /**
-     * @return Result
+     * @return AnalyzedResult
      */
     public function getAnalyzeResult();
 

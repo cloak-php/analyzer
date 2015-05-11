@@ -20,7 +20,7 @@ final class Analyzer implements AnalyzeDriver
 {
 
     /**
-     * @var Analyzeadapter
+     * @var AnalyzeAdapter
      */
     private $adapter;
 
@@ -37,9 +37,9 @@ final class Analyzer implements AnalyzeDriver
 
 
     /**
-     * @param Analyzeadapter $adapter
+     * @param AnalyzeAdapter $adapter
      */
-    public function __construct(Analyzeadapter $adapter)
+    public function __construct(AnalyzeAdapter $adapter)
     {
         $this->adapter = $adapter;
     }
