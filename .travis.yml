@@ -9,3 +9,4 @@ script:
   - composer coverage
 after_script:
   - composer coveralls
+sudo: false
