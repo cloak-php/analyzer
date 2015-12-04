@@ -10,3 +10,5 @@ script:
 after_script:
   - composer coveralls
 sudo: false
+notifications:
+  email: false
